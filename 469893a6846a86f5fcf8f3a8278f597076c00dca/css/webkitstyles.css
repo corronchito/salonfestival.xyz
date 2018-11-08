@@ -167,20 +167,8 @@ a{
 @media screen and (max-width: 600px) {
 
 #warp{
-/*	border: 5px solid red;*/
-	margin-left: auto;
-	margin-right: auto;
-	width: 100vw;
-	height: 100vh;
-	background-image: url("../img/warp1.png");
+
 	background-size: 170vw;
-	background-repeat: no-repeat;
-	position: absolute;
-	background-position: center;
-/*	-webkit-transform: rotate(90deg);
-		transform: rotate(90deg);*/
-    -webkit-animation: fadein 7s infinite alternate;
-       animation: fadein 7s infinite alternate;
 }
 
 #festival_title{
@@ -190,14 +178,21 @@ a{
 	width: 90vw;
 	height: 15vh;
 	font-size: 7vw;
-	-webkit-animation: title_color_phone 6s infinite alternate;
-			animation: title_color_phone 6s infinite alternate;
-/*FLOATING IS NOT WORKING BUT IDK WHY, I TRIED TO MAKE ANOTHER ANIMATION FOR SMALL SCREEN, STILL DOESN-T*/
+/*	-webkit-animation: title_color_phone 6s infinite alternate;
+			animation: title_color_phone 6s infinite alternate;*/
+	-webkit-animation: floating_phone 15s infinite alternate linear;
+	        animation: floating_phone 15s infinite alternate linear;
 }
 
 #middle_color{
-	-webkit-animation: title_middlecolor_phone 6s infinite alternate;
-			animation: title_middlecolor_phone 6s infinite alternate;
+/*	-webkit-animation: title_middlecolor_phone 6s infinite alternate;
+			animation: title_middlecolor_phone 6s infinite alternate;*/
+}
+
+/*:active allows the title to be clicked instead of hovered on phones*/
+#festival_title:hover, #festival_title:active{
+	color: rgba(255,0,255, 0.7);
+	text-shadow: 2px 4px 1px rgba(153,255,204,0.8);
 }
 
 #date{
@@ -278,6 +273,19 @@ a{
 	0%{transform: translate(5vw, 5vh);}
 	50%{transform:  translate(10vw, -5vh);}
 	100%{transform: translate(15vw, 5vh);}
+}
+
+
+@-webkit-keyframes floating_phone{
+	0%{-webkit-transform: translate(-1vw, 5vh);}
+	50%{-webkit-transform: translate(5vw, -5vh);}
+	100%{-webkit-transform: translate(10vw, 5vh);}
+}
+
+@keyframes floating_phone{
+	0%{transform: translate(-1vw, 5vh);}
+	50%{transform:  translate(5vw, -5vh);}
+	100%{transform: translate(10vw, 5vh);}
 }
 
 
